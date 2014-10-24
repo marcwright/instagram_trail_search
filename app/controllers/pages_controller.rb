@@ -4,9 +4,9 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
   def index
-    @pages = Page.all
+    # @photo = HTTParty.get "https://api.instagram.com/v1/tags/abramsfalls/media/recent?client_id=c77ea186e7a4465a90729e3c4735403a"
     # @page = Page.new
-    @movie = Page.party(params[:movie])
+    @photo = Page.party(params[:photo])
   end
 
   # GET /pages/1

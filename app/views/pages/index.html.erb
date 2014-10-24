@@ -1,29 +1,15 @@
-<h1>Movie Search</h1>
+<h1>Trail Search</h1>
 
 <%= form_tag pages_path, :method => 'get' do %>
-    <%= text_field_tag :movie, params[:movie] %>
+    <%= text_field_tag :photo, params[:photo] %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 <br>
-Not sure which movie you want? Try <%= link_to "Cars" , pages_path(movie: "cars") %>
+Not sure which trail you want? Try <%= link_to "Boogerman Loop" , pages_path(photo: "boogermanloop") %>
 
 <hr>
 
+<h2><%= @photo["data"][0]["caption"]["text"] %></h2>
+<%= image_tag @photo["data"][0]["images"]["standard_resolution"]["url"] %>
+
 <br>
-<h2><%= @movie['title'] %></h2>
-<%= image_tag @movie['posters']['profile'] %>
-<br>
-<% @movie.each do | key, value | %>
-	<% if value.is_a?(Hash) %>
-		<% # Iterate through nested hash %>
-		<ul>
-		<% value.each do | key, value | %>
-  		<li><strong><%= "#{key}: " %></strong>
-  		<%= value %></li>
-  	<% end %>
-  <% else %>
-  	<% # If it's not a nested hash, just output key and value %>
-		<strong><%= "#{key}: " %></strong>
-		<%= value %><br>
-  <% end %>
-<% end %>

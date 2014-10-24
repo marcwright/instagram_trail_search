@@ -10,6 +10,6 @@ Not sure which trail you want? Try <%= link_to "Boogerman Loop" , pages_path(pho
 <hr>
 
 <h2><%= @photo["data"][0]["caption"]["text"] %></h2>
-<%= image_tag @photo["data"][0]["images"]["standard_resolution"]["url"] %>
+<%= image_tag @photo["data"][0]["images"]["thumbnail"]["url"] %>
 
 <br>

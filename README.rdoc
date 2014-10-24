@@ -1,6 +1,6 @@
-== README
+== Instagram Trail Search
 
-Search for your favorite movie using the Rotten Tomatoes API.
+Search for your favorite Smoky Mountain trail photos using the Instagram API.
 
 * bundle install
 * rake db:migrate
